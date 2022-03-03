@@ -1,6 +1,7 @@
 <!--
     Authors:
         - Michael Hills
+        - Jack Purkiss
 -->
 
 {% extends 'base.html' %}
@@ -23,7 +24,58 @@
 
 {% block content %}
 
-<h1>Recent Activity</h1>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+    *, body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+    #title {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.challenge {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #BBEBA6;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+.challenge h5{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.challenge a{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+small{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+</style>
+
+<h1 id="title">Recent Activity</h1>
+
 
 <div>
     {% for response in responses %}
@@ -35,7 +87,7 @@
             {% include 'like.html' %}
 
 
-            <hr>
+            
         </div>
     {% endfor %}
 </div>

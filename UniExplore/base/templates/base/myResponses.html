@@ -2,6 +2,7 @@
     Authors:
         - Michael Hills
         - Kate Belson
+        -
 -->
 
 {% extends 'base.html' %}
@@ -20,8 +21,66 @@
 
 {% block content %}
 
-<h1>Your Completed Challenges</h1>
-<h4>Total Points: {{request.user.profile.points}}</h4>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+    *, body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+    #title {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+    #points {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    }
+.challenge {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #BBEBA6;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+.challenge h5{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.challenge a{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+small{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+</style>
+
+<h1 id='title'>Your Completed Challenges</h1>
+<h4 id="points">Total Points: {{request.user.profile.points}}</h4>
 
 <div>
     {% for response in responses %}
@@ -30,8 +89,6 @@
                 <small>{{response.description}}</small> <br>
                 {% include 'like.html' %}
 
-
-                <hr>
             </div>
         {% endfor %}
 </div>

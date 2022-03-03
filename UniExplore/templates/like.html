@@ -1,5 +1,15 @@
 <!--Written by Michael Hills-->
 <form action = "{% url 'like-post' %}" method="POST">
+
+    <style>
+        button {
+            color: #fff;
+            background-color: #177442;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+    </style>
+
     {% csrf_token %}
     <input type="hidden"  name = 'response_id' value = "{{response.id}}"> 
     {% if request.user not in response.liked.all %}
